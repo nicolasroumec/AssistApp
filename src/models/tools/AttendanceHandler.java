@@ -4,6 +4,11 @@
  */
 package models.tools;
 
+import java.util.ArrayList;
+import models.Attendance;
+import models.AttendanceDTO;
+import models.Student;
+
 /**
  *
  * @author usuario
@@ -37,5 +42,27 @@ public class AttendanceHandler {
         else{
             return null;
         }
+    }
+    
+    public ArrayList<Attendance> createAttendances(ArrayList<Student>studentsList, ArrayList<AttendanceDTO> attendanceDTOList){
+        ArrayList<Attendance> toReturnList = new ArrayList<Attendance>();
+        
+        for(AttendanceDTO a : attendanceDTOList){
+            for(Student s : studentsList ){
+                if(a.getStudentId() == s.getId()){
+                    Attendance attendance = new Attendance(
+                            a.getDate(),
+                            a.getStudentId(),
+                            s.getFirstName(),
+                            s.getLastName(),
+                            a.getAttendaceStatus()
+                    );
+                    toReturnList.add(attendance);
+                    System.out.println(attendance.getId());
+                }
+            }
+        }
+        return toReturnList;
+        
     }
 }

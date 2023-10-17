@@ -5,15 +5,18 @@ import java.time.LocalDateTime;
 
 public class AttendanceDTO {
     
+    private int attendanceId;
     private int studentId;
     private String date;
     private int attendaceStatus;
 
-    public AttendanceDTO( int pStudentId, String pDate, int pAttendaceStatus) {
-
+    public AttendanceDTO(  int pStudentId, String pDate, int pAttendaceStatus) {
         this.studentId = pStudentId;
         this.date = pDate;
         this.attendaceStatus = pAttendaceStatus;
+    }
+    public AttendanceDTO(){
+        
     }
 
     public int getStudentId() {
@@ -38,5 +41,12 @@ public class AttendanceDTO {
 
     public void setAttendaceStatus(int attendaceStatus) {
         this.attendaceStatus = attendaceStatus;
+    }
+    public int getAttendanceId() {
+        return attendanceId;
+    }
+
+    public void setAttendanceId(int attendanceId) {
+        this.attendanceId = attendanceId;
     }
 }

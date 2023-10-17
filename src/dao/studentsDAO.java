@@ -90,4 +90,27 @@ public class StudentsDAO {
         connection.disconnect();
         return list;    
     }
+    public Student getStudentFromId(int id){
+        Student student = new Student();
+        PreparedStatement ps = null;
+        ResultSet rs = null; 
+        try{
+            ps = connection.connect().prepareStatement("SELECT * FROM student WHERE id=?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+                student=new Student(
+                rs.getInt("id"),
+                rs.getString("firstName"),
+                rs.getString("lastName"),
+                rs.getInt("dni")
+                );
+                 
+            
+            
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        connection.disconnect();
+      return student;
+    }
 }

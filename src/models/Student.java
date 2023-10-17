@@ -15,6 +15,9 @@ public class Student {
         this.lastName = pLast;
         this.dni = pDNI;
     }
+    public Student(){
+        
+    }
 
     public int getId() {
         return id;

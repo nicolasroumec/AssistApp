@@ -1,6 +1,7 @@
 
 package attendance;
 
+import dao.AttendanceDAO;
 import dao.StudentsDAO;
 import view.vMain;
 import java.sql.Connection;
@@ -20,15 +21,10 @@ public class Attendance {
        vMain menu = new vMain();
        menu.setVisible(true);
        menu.setLocationRelativeTo(null);
-        //Student student = new Student();
-        //StudentsDAO dao = new StudentsDAO();
-        //student.setDni(50);
-        //student.setFirstName("Cristian");
-        //student.setLastName("Gomez");
-        //dao.addStudent(student);
-        //int dni = 50;
-        //dao.deleteStudent(dni);
-        //dao.updateStudent(student);
+       
+       //AttendanceDAO a = new AttendanceDAO();
+       //a.printAttendanceList(a.getAttendanceTable());
+        
        
        
     }
